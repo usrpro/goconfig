@@ -7,13 +7,8 @@ import (
 	"os"
 )
 
-func Read(c interface{}) {
-
-	if err := readWithError(c); err != nil {
-		os.Stderr.WriteString(err.Error())
-		os.Exit(1)
-	}
-
+func Read(c interface{}) error {
+	return readWithError(c)
 }
 
 func readWithError(c interface{}) error {
